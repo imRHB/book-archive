@@ -36,7 +36,7 @@ const displayBooks = booksObj => {
         bookDiv.classList.add('col');
         bookDiv.innerHTML = `
             <div class="card h-100">
-                <img src="${coverUrl}" class="card-img-top" alt="...">
+                <img src="${coverUrl}" class="card-img-top" alt="no image available">
                 <div class="card-body">
                     <h5 class="card-title">${book.title}</h5>
                 </div>
