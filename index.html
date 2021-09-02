@@ -16,16 +16,27 @@
 </head>
 
 <body>
+    <header class="container my-5">
+        <h1 class="text-center text-secondary fw-bold">Book Archive</h1>
+        <div class="input-group mb-3 w-75 mx-auto my-4">
+            <input id="search-field" type="text" class="form-control" placeholder="Enter book name"
+                aria-label="Enter book name" aria-describedby="button-addon2">
+            <button id="search-btn" onclick="searchBook()" class="btn btn-outline-secondary" type="button"
+                id="button-addon2">Search</button>
+        </div>
+    </header>
     <main>
+        <!-- Display search results section start -->
         <section class="container my-5">
-            <h1 class="text-center text-secondary fw-bold">Book Archive</h1>
-            <div class="input-group mb-3 w-75 mx-auto my-4">
-                <input id="search-field" type="text" class="form-control" placeholder="Enter book name"
-                    aria-label="Enter book name" aria-describedby="button-addon2">
-                <button id="search-btn" onclick="searchBook()" class="btn btn-outline-secondary" type="button"
-                    id="button-addon2">Search</button>
+            <div id="result-count" class="my-5">
+                <!-- display total search results found -->
+            </div>
+            <div id="display-search-results"
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4">
+                <!-- display all books that found by search -->
             </div>
         </section>
+        <!-- Display search results section start -->
     </main>
 
     <!-- Bootstrap JavaScript -->
