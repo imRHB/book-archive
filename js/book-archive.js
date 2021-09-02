@@ -17,7 +17,7 @@ const searchBook = () => {
         displayResultCount.textContent = '';
         displayResultContainer.textContent = '';
         noInput.style.display = 'block';
-        noResult.style.display = 'none';
+        // noResult.style.display = 'block';
     }
 
     else {
@@ -31,8 +31,7 @@ const searchBook = () => {
             .then(data => displayBooks(data));
 
         searchField.value = '';
-    }
-    // searchField.value = '';
+    };
 };
 
 const coverImage = coverImgId => {
@@ -41,8 +40,9 @@ const coverImage = coverImgId => {
 };
 
 const displayBooks = booksObj => {
-    if (booksObj.numFound === 0) {
-        noInput.style.display = 'none';
+    // console.log(booksObj.numFound);
+    if (booksObj.numFound == '0') {
+        spinner.style.display = 'none';
         noResult.style.display = 'block';
     }
     else {
@@ -55,8 +55,6 @@ const displayBooks = booksObj => {
     `;
         displayResultContainer.textContent = '';
         books.forEach(book => {
-            console.log(book);
-            // const coverUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
             const coverUrl = coverImage(book.cover_i)
             const bookDiv = document.createElement('div');
             bookDiv.classList.add('col');
@@ -71,7 +69,7 @@ const displayBooks = booksObj => {
             displayResultCount.appendChild(totalResultsDiv);
             displayResultContainer.appendChild(bookDiv);
         });
-    }
+    };
 };
 
 const bookDetails = book => {
