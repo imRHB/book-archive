@@ -17,7 +17,10 @@
 
 <body>
     <header class="container my-5">
+        <!-- website title -->
         <h1 class="text-center text-secondary fw-bold">Book Archive</h1>
+
+        <!-- search box -->
         <div id="search" class="input-group my-5">
             <input id="search-field" type="text" class="form-control" placeholder="Enter book name"
                 aria-label="Enter book name" aria-describedby="button-addon2">
@@ -26,41 +29,37 @@
         </div>
     </header>
     <main>
-        <!-- display book details section start -->
         <section class="container">
             <div id="book-details" class="shadow-sm">
-                <!-- book details -->
+                <!-- display book details -->
             </div>
         </section>
-        <!-- display book details section end -->
 
         <section class="container">
+            <!-- error message -->
             <div id="error-message">
                 <h3 id="no-input" class="text-danger">Enter book name please</h3>
                 <h3 id="no-result" class="text-warning">No book found</h3>
             </div>
         </section>
 
-        <!-- spinner start -->
+        <!-- spinner -->
         <div class="text-center">
             <div id="spinner" class="spinner-border text-secondary" role="status">
                 <span class="visually-hidden"></span>
             </div>
         </div>
-        <!-- spinner end -->
 
-        <!-- Display search results section start -->
         <section class="container my-5">
             <div id="result-count" class="my-5">
-                <!-- search results -->
+                <!-- display search results -->
             </div>
 
             <div id="display-search-results"
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4">
-                <!-- display all books that found by search -->
+                <!-- total results found -->
             </div>
         </section>
-        <!-- Display search results section end -->
     </main>
 
     <!-- Bootstrap JavaScript -->
