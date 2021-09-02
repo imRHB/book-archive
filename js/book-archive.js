@@ -51,7 +51,7 @@ const displayBooks = booksObj => {
         const totalResultsDiv = document.createElement('div');
         displayResultCount.textContent = '';
         totalResultsDiv.innerHTML = `
-        <h3><b>Total Results:</b> ${booksObj.numFound}</h3>
+        <p class="fs-3 text-info"><b>Total book found:</b> ${booksObj.numFound}</p>
     `;
         displayResultContainer.textContent = '';
         books.forEach(book => {
