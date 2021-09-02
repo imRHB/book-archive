@@ -1,0 +1,19 @@
+#search {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+#book-details {
+    max-width: 540px;
+    /* border: 1px solid gray; */
+    border-radius: 8px;
+}
+
+#no-input, #no-result {
+    display: none;
+}
+
+#spinner {
+    display: none;
+    margin: 0 auto;
+}
