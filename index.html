@@ -18,11 +18,16 @@
 <body>
     <header class="container my-5">
         <!-- website title -->
-        <h1 class="text-center text-secondary fw-bold">Book Archive</h1>
+        <div class="bg-light py-4">
+            <h1 class="text-center text-success fw-bold">BOOK ARCHIVE</h1>
+            <p class="fw-bold text-center text-black-50"><small>by <span class="text-info">OPEN
+                        LIBRARY</span></small>
+            </p>
+        </div>
 
         <!-- search box -->
         <div id="search" class="input-group my-5">
-            <input id="search-field" type="text" class="form-control" placeholder="Enter book name"
+            <input id="search-field" type="text" class="form-control" placeholder="Search book by name"
                 aria-label="Enter book name" aria-describedby="button-addon2">
             <button id="search-btn" onclick="searchBook()" class="btn btn-outline-secondary" type="button"
                 id="button-addon2">Search</button>

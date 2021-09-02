@@ -1,3 +1,7 @@
+/* 
+    Declare necessary variable as globally
+*/
+
 const searchField = document.getElementById('search-field');
 const searchButton = document.getElementById('search-button');
 const displayResultContainer = document.getElementById('display-search-results');
@@ -7,6 +11,10 @@ const errorMsgContainer = document.getElementById('error-message');
 const spinner = document.getElementById('spinner');
 const noInput = document.getElementById('no-input');
 const noResult = document.getElementById('no-result');
+
+/* 
+    Main function to search book
+*/
 
 const searchBook = () => {
     let searchText = searchField.value;
@@ -31,6 +39,10 @@ const searchBook = () => {
         searchField.value = '';
     };
 };
+
+/* 
+    Function to display the search results, just 30 results shown by slice
+*/
 
 const displayBooks = booksObj => {
     if (booksObj.numFound == '0') {
@@ -64,6 +76,10 @@ const displayBooks = booksObj => {
     };
 };
 
+/* 
+    Function to get cover image, and default image for which book no cover image
+*/
+
 const coverImage = coverImgId => {
     if (coverImgId === undefined) {
         const coverUrl = 'images/not-found.jpg';
@@ -74,6 +90,11 @@ const coverImage = coverImgId => {
         return coverUrl;
     }
 };
+
+/* 
+    Function to display the details of books
+    Display value : Title, Author, Publisher, First Pulish
+*/
 
 const bookDetails = book => {
     const coverUrl = coverImage(book.cover_i);
