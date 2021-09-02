@@ -26,14 +26,22 @@
         </div> -->
 
         <div class="input-group mb-3">
-            <input id="search-field" type="text" class="form-control" placeholder="Recipient's username"
-                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input id="search-field" type="text" class="form-control" placeholder="Enter book name"
+                aria-label="Enter book name" aria-describedby="button-addon2">
             <button id="search-btn" onclick="searchBook()" class="btn btn-outline-secondary" type="button"
-                id="button-addon2">Button</button>
+                id="button-addon2">Search</button>
         </div>
 
     </header>
     <main>
+        <!-- display book details section start -->
+        <section class="container">
+            <div id="book-details" class="card" style="max-width: 720px;">
+                <!-- display book details here -->
+            </div>
+        </section>
+        <!-- display book details section end -->
+
         <!-- Display search results section start -->
         <section class="container my-5">
             <div id="result-count" class="my-5">

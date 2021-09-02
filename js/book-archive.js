@@ -2,6 +2,7 @@ const searchField = document.getElementById('search-field');
 const searchButton = document.getElementById('search-button');
 const displayResultContainer = document.getElementById('display-search-results');
 const displayResultCount = document.getElementById('result-count');
+const displayBookDetails = document.getElementById('book-details');
 
 const searchBook = () => {
     const searchText = searchField.value;
@@ -13,12 +14,12 @@ const searchBook = () => {
     searchField.value = '';
 };
 
-/* const coverImage = coverImgId => {
+const coverImage = coverImgId => {
     const coverUrl = `https://covers.openlibrary.org/b/id/${coverImgId}-M.jpg`;
     return coverUrl;
     // console.log(coverUrl)
 };
- */
+
 
 const displayBooks = booksObj => {
     const books = booksObj.docs.slice(0, 30);
@@ -36,7 +37,7 @@ const displayBooks = booksObj => {
         bookDiv.classList.add('col');
         bookDiv.innerHTML = `
             <div class="card h-100">
-                <img src="${coverUrl}" class="card-img-top" alt="no image available">
+                <img src="${coverUrl}" onclick='bookDetails(${JSON.stringify(book)})' class="card-img-top" alt="no image available">
                 <div class="card-body">
                     <h5 class="card-title">${book.title}</h5>
                 </div>
@@ -44,8 +45,6 @@ const displayBooks = booksObj => {
         `;
         displayResultCount.appendChild(totalResultsDiv);
         displayResultContainer.appendChild(bookDiv);
-
-        // console.log(book);
     });
 
 
@@ -55,4 +54,25 @@ const displayBooks = booksObj => {
     console.log(booksObj.docs[0].subject[0]);
     console.log(booksObj.docs[0].cover_i);
     console.log('Total results: ', booksObj.numFound);
+};
+
+const bookDetails = book => {
+    const bookDetailsDiv = document.createElement('div');
+    bookDetailsDiv.classList.add('row');
+    displayBookDetails.textContent = '';
+    bookDetailsDiv.innerHTML = `
+        <div class="col-md-4">
+            <img src="sad-moment-thumbnail.jpg" class="img-fluid h-100 rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">${book.title}</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional
+                                content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    `;
+    displayBookDetails.appendChild(bookDetailsDiv);
 };
