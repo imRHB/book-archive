@@ -28,7 +28,6 @@ const searchBook = () => {
         fetch(searchUrl)
             .then(response => response.json())
             .then(data => displayBooks(data));
-
         searchField.value = '';
     };
 };
@@ -40,7 +39,7 @@ const displayBooks = booksObj => {
     }
     else {
         spinner.style.display = 'none';
-        const books = booksObj.docs.slice(0, 50);
+        const books = booksObj.docs.slice(0, 30);
 
         const totalResultsDiv = document.createElement('div');
         displayResultCount.textContent = '';
@@ -60,7 +59,6 @@ const displayBooks = booksObj => {
                     </div>
                 </div>
             `;
-            console.log(book);
             displayResultCount.appendChild(totalResultsDiv);
             displayResultContainer.appendChild(bookDiv);
         });
